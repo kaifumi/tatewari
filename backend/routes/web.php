@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//  認証
+Auth::routes();
+
+// ホーム
+Route::get('/home', 'HomeController@index')->name('home');
+
+// タスク
+Route::get('/task', 'TaskController@index')->name('task');

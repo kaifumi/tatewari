@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $today = date("Y/m/d");
+        return view('home', compact('today'));
     }
 }

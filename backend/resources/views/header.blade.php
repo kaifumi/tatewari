@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow navbar-expand-lg">
+<nav class="navbar navbar-dark fixed-top bg-blue flex-md-nowrap p-0 shadow navbar-expand-lg">
   <!-- <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a> -->
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ url('/') }}">ホーム</a>
   <ul class="navbar-nav px-3 ml-auto">

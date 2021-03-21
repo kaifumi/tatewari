@@ -14,8 +14,8 @@ class Tasks extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->string('task_name');
             $table->string('category_id');
             $table->text('description');

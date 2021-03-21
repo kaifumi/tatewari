@@ -14,8 +14,8 @@ class Strips extends Migration
     public function up()
     {
         Schema::create('strips', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('task_id')->unsigned();
+            $table->increments('id');
+            $table->integer('task_id')->unsigned();
             $table->string('strip_name');
             $table->integer('spent_minute');
             $table->bigInteger('step_id');

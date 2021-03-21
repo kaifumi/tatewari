@@ -14,8 +14,8 @@ class Steps extends Migration
     public function up()
     {
         Schema::create('steps', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('task_id');
+            $table->increments('id');
+            $table->integer('task_id');
             $table->string('step_name');
             $table->integer('step_level');
             $table->timestamps();

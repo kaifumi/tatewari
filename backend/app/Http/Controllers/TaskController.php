@@ -42,16 +42,16 @@ class TaskController extends Controller
             try {
                 // 新規作成
                 if ($request->input_type == 1) {
-                    // カテゴリ取得
+                    // カテゴリ「未設定」の場合category_id=0
                     if ($request->category_name == 'not_set') {
-                        $category_id = 1;
+                        $category_id = 0;
                     }
-
                     // 新規
                     $task = Task::create([
                         'user_id' => Auth::id(),
                         'task_name' => $request->task_name,
                         'category_id' => $category_id,
+                        'description' => $request->description,
                         'start_date' => $request->start_date,
                         'limit_date' => $request->limit_date,
                     ]);
@@ -75,13 +75,23 @@ class TaskController extends Controller
             if (!empty($task)) {
                 return redirect()->route('task_edit', ['id' => $task->id]);
             }
+        // GETメソッドの場合
         } else {
-            if (!empty($id)) {
+            if (!is_null($id)) {
                 $user = User::getUser($id);
-                $set_data = [
-                    'input_type' => 2,
-                    'id' => $user['id'],
-                ];
+                // 該当のユーザデータがある場合
+                if (!is_null($user)) {
+                    $set_data = [
+                        'input_type' => 2,
+                        'id' => $user['id'],
+                    ];
+                // 該当のユーザデータが無い場合
+                } else {
+                    $set_data = [
+                        'input_type' => 2,
+                    ];
+                }
+            // 該当のユーザデータがある場合
             } else {
                 $set_data = [
                     'input_type' => 1,

@@ -41,6 +41,13 @@
                 <dd class="col-sm-4 pl-0"><input type="text" class="form-control" id="limit_date" name="limit_date" value="{{ old('limit_date', @$set_data['limit_date']) }}"></dd>
                 <span class="text-danger">{{ $errors->first('limit_date') }}</span>
             </div>
+            <div class="form-group row">
+                <dt><label class="control-label">説明</label></dt>
+                <div class="col-sm-12 pl-0">
+                    <textarea id="description" class="form-control" name="description">{{ old('description') }}</textarea>
+                    <span class="text-danger">{{$errors->first('description')}}</span>
+                </div>
+            </div>
             @if(!empty($set_data['tasks']))
                 @foreach ($set_data['tasks'] as $user_key => $task)
                     <!-- <div class="border-top">

@@ -14,14 +14,14 @@
         @csrf
         <dl>
             <input type="hidden" class="form-control" name="input_type" value="{{ old('input_type', @$set_data['input_type']) }}">
-            <div class="form-group row">
-                <dd class="col-sm-12 pl-0"><input type="text" class="form-control" id="task_name" name="task_name" value="{{ old('task_name', @$set_data['task_name']) }}" placeholder="タスク名"></dd><br>
-                <span class="text-danger">{{ $errors->first('task_name') }}</span>
+            <div class="form-group row mt-5">
+                <dd class="col-sm-12 pl-0"><input type="text" class="form-control" id="task_name" name="task_name" value="{{ old('task_name', @$set_data['task_name']) }}" placeholder="タスク名"></dd>
+                <p class="text-danger">{{ $errors->first('task_name') }}</p>
             </div>
             <div class="form-group row">
-                <dt><label class="control-label">カテゴリ</label></dt>
+                <dt class="col-sm-2"><label class="control-label">カテゴリ</label></dt>
                 <select class="form-control col-sm-4" name="category_name">
-                    <option value="none"></option>
+                    <option value=""></option>
                     <option value="not_set">未設定</option>
                     @if (!empty(@$set_data['categories']))
                         @foreach ($categories as $category)
@@ -29,20 +29,26 @@
                         @endforeach
                     @endif
                 </select>
-                <span class="text-danger">{{$errors->first('category_name')}}</span>
+                <div class="col-sm-6">
+                </div>
+                <p class="text-danger">{{$errors->first('category_name')}}</p>
             </div>
             <div class="form-group row">
-                <dt><label class="control-label">開始日</label></dt>
-                <dd class="col-sm-4 pl-0"><input type="text" class="form-control" id="start_date" name="start_date" value="{{ old('start_date', @$set_data['start_date']) }}"></dd><br>
+                <dt class="col-sm-2"><label class="control-label">開始日</label></dt>
+                <dd class="col-sm-4 pl-0"><input type="text" class="form-control" id="start_date" name="start_date" value="{{ old('start_date', @$set_data['start_date']) }}"></dd>
+                <div class="col-sm-6">
+                </div>
                 <span class="text-danger">{{ $errors->first('start_date') }}</span>
             </div>
             <div class="form-group row">
-                <dt><label class="control-label">期限日</label></dt>
+                <dt class="col-sm-2"><label class="control-label">期限日</label></dt>
                 <dd class="col-sm-4 pl-0"><input type="text" class="form-control" id="limit_date" name="limit_date" value="{{ old('limit_date', @$set_data['limit_date']) }}"></dd>
+                <div class="col-sm-6">
+                </div>
                 <span class="text-danger">{{ $errors->first('limit_date') }}</span>
             </div>
             <div class="form-group row">
-                <dt><label class="control-label">説明</label></dt>
+                <dt class="col-sm-2"><label class="control-label">説明</label></dt>
                 <div class="col-sm-12 pl-0">
                     <textarea id="description" class="form-control" name="description">{{ old('description') }}</textarea>
                     <span class="text-danger">{{$errors->first('description')}}</span>

@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Log;
 class TaskController extends Controller
 {
     public function index() {
-        $test = "テストメッセージ";
-        return view('/task/index', compact('test'));
+        $tasks = Task::where('user_id', 1)
+            ->orderBy('updated_at', 'desc')
+            ->take(10)
+            ->get();
+        return view('/task/index', compact('tasks'));
     }
 
     public function edit(Request $request, $id=null) {

@@ -1,4 +1,4 @@
-<div class="col-md-3 col-xl-2 sidebar">
+<div class="col-md-3 col-xl-2">
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
     <div class="sidebar-sticky">
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

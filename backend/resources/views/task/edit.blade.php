@@ -82,8 +82,9 @@
                 @endforeach
             @endif
         </dl>
-        <div class="offset-sm-3 mt-4">
-            <button class="btn btn-primary px-5" id="account_entry" type="submit">追加</button>
+        <div class="mt-4 col-sm-12">
+            <a href="{{ route('task') }}"><button class="btn btn-success px-5 col-sm-2" type="button">一覧</button></a>
+            <button class="btn btn-primary px-5 offset-sm-1 col-sm-2" type="submit">追加</button>
         </div>
     </form>
 @endsection
